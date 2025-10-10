@@ -1,0 +1,52 @@
+# ---- Builds / outputs ----
+# dossiers de build (communs)
+build/
+debug/
+release/
+out/
+
+# fichiers compilés / binaires
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+
+# ---- Qt / qmake spécifiques ----
+# fichier utilisateur généré par Qt Creator (paths locaux, configs personnels)
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+
+# fichiers générés par moc/uic/rcc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# ---- IDEs / Editors ----
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.user
+*.user.*
+*.swp
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- logs / temporaires ----
+*.log
+*.tmp
+*.bak
+
+# ---- grosses ressources (optionnel: utiliser Git LFS si nécessaire) ----
+# *.png
+# *.jpg
+
+# ---- autres ----
+# cacher fichiers spécifiques à l'environnement dev
+.env
