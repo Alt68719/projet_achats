@@ -2,9 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlError>
-#include <QDebug>
 #include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
