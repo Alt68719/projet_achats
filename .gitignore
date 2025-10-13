@@ -50,3 +50,5 @@ Thumbs.db
 # ---- autres ----
 # cacher fichiers spécifiques à l'environnement dev
 .env
+#ne pas visionner le fichier la configuration de la DB
+config_local/config.ini
