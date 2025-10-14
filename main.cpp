@@ -1,19 +1,19 @@
 #include "mainwindow.h"
-
 #include <QApplication>
-#include <QLocale>
 #include <QTranslator>
-#include <QPushButton>
+#include <QLocale>
+#include <QDebug>
 #include "database.h"
-#include "database.cpp"
-#include <QApplication>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    if (!Database::connect()){
-            qDebug() << "Impossible de se connecter a la base";
-            return -1;
-        }
+
+    if (!Database::connect()) {
+        qDebug() << "Impossible de se connecter à la base";
+        return -1;
+    }
+
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {
@@ -23,7 +23,9 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
     MainWindow w;
     w.show();
+
     return a.exec();
 }
