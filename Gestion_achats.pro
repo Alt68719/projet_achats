@@ -29,3 +29,7 @@ QT += core gui widgets sql
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    image000/logo00.jpg \
+    image000/logo01.png
