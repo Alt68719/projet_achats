@@ -10,14 +10,41 @@ CONFIG += c++11
 
 SOURCES += \
     database.cpp \
+    database/database.cpp \
+    entrepot.cpp \
+    entrepotform.cpp \
+    fournisseur.cpp \
+    fournisseurform.cpp \
+    livraison.cpp \
+    livraisonform.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    marchandise.cpp \
+    marchandiseform.cpp \
+    models/entrepot.cpp \
+    models/fournisseur.cpp \
+    models/livraison.cpp \
+    models/marchandise.cpp \
+    models/stock.cpp \
+    stock.cpp \
+    stockmaj.cpp
 
 HEADERS += \
-    database.h \
-    mainwindow.h
+    database/database.h \
+    entrepot.h \
+    fournisseur.h \
+    livraison.h \
+    mainwindow.h \
+    marchandise.h \
+    model/entrepot.h \
+    model/fournisseur.h \
+    model/livraison.h \
+    model/marchandise.h \
+    model/stock.h \
+    stock.h
 
 FORMS += \
+    fornisseur.ui \
     mainwindow.ui
 
 TRANSLATIONS += \

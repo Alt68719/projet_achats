@@ -1,0 +1,4 @@
+#ifndef MARCHANDISE_H
+#define MARCHANDISE_H
+
+#endif // MARCHANDISE_H
