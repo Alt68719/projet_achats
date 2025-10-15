@@ -22,8 +22,8 @@
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>70</y>
+      <x>240</x>
+      <y>60</y>
       <width>1101</width>
       <height>411</height>
      </rect>
@@ -33,8 +33,8 @@
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>70</y>
+      <x>51</x>
+      <y>60</y>
       <width>181</width>
       <height>37</height>
      </rect>
@@ -45,6 +45,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -57,8 +58,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>110</y>
+      <x>51</x>
+      <y>100</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -69,6 +70,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -81,8 +83,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>150</y>
+      <x>51</x>
+      <y>140</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -93,6 +95,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -105,8 +108,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>190</y>
+      <x>51</x>
+      <y>180</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -117,6 +120,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -129,8 +133,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>51</x>
+      <y>220</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -141,6 +145,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -153,8 +158,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_6">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>270</y>
+      <x>51</x>
+      <y>260</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -165,6 +170,7 @@
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color : black;
+	color : red;
 }</string>
        </property>
        <property name="text">
@@ -177,8 +183,8 @@
    <widget class="QWidget" name="verticalLayoutWidget_8">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>490</y>
+      <x>51</x>
+      <y>480</y>
       <width>1291</width>
       <height>31</height>
      </rect>
@@ -188,8 +194,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>59</x>
-      <y>309</y>
+      <x>50</x>
+      <y>299</y>
       <width>181</width>
       <height>171</height>
      </rect>
@@ -219,11 +225,16 @@
        <height>171</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+	background-color : transparent;
+}</string>
+     </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>image000/logo01.png</pixmap>
+      <pixmap>image000/logo00.jpg</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -233,8 +244,8 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>59</x>
-      <y>10</y>
+      <x>50</x>
+      <y>0</y>
       <width>1291</width>
       <height>51</height>
      </rect>
