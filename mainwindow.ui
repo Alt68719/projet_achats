@@ -6,272 +6,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1396</width>
-    <height>577</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">QWidget {
-	background-color : white;
-}</string>
+   <string>Gestion des Achats</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="horizontalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>60</y>
-      <width>1101</width>
-      <height>411</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>60</y>
-      <width>181</width>
-      <height>37</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Accueil</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>100</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Fournisseurs</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>140</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Marchandises</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>180</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QPushButton" name="pushButton_3">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Livraisons</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_5">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>220</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <widget class="QPushButton" name="pushButton_4">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Stocks</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_6">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>260</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_6">
-     <item>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-	background-color : black;
-	color : red;
-}</string>
-       </property>
-       <property name="text">
-        <string>Entrepôts</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_8">
-    <property name="geometry">
-     <rect>
-      <x>51</x>
-      <y>480</y>
-      <width>1291</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_8"/>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>299</y>
-      <width>181</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
-    </property>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>90</y>
-       <width>49</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>-2</x>
-       <y>5</y>
-       <width>191</width>
-       <height>171</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QGroupBox {
-	background-color : transparent;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap>image000/logo00.jpg</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>0</y>
-      <width>1291</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="btnNouveauAchat">
+      <property name="text">
+       <string>🆕 Nouveau Achat</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnVoirStock">
+      <property name="text">
+       <string>📦 Voir le stock</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnInventaire">
+      <property name="text">
+       <string>📋 Inventaire</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnListeLivraison">
+      <property name="text">
+       <string>💰 Liste des livraisons</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAPropos">
+      <property name="text">
+       <string>ℹ️ À propos des achats</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1396</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuAccueil">
-    <property name="title">
-     <string>Accueil</string>
-    </property>
-   </widget>
-   <addaction name="menuAccueil"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

@@ -1,31 +1,16 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <QTranslator>
-#include <QLocale>
-#include <QDebug>
-#include "database.h"
+#include "database/database.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    if (!Database::connect()) {
-        qDebug() << "Impossible de se connecter à la base";
-        return -1;
-    }
-
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "Gestion_achats_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            a.installTranslator(&translator);
-            break;
-        }
+    if (!Database::ouvrir()) {
+        return -1; // Impossible d’ouvrir la base
     }
 
     MainWindow w;
     w.show();
-
     return a.exec();
 }
