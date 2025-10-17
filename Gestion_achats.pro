@@ -9,6 +9,8 @@ LRELEASE = lrelease
 # Sources
 SOURCES += \
     form/FormBonLivraison.cpp \
+    form/ViewInventaire.cpp \
+    form/ViewStock.cpp \
     main.cpp \
     mainwindow.cpp \
     database/database.cpp \
@@ -25,6 +27,8 @@ SOURCES += \
 # Headers
 HEADERS += \
     form/FormBonLivraison.h \
+    form/ViewInventaire.h \
+    form/ViewStock.h \
     mainwindow.h \
     database/database.h \
     form/FormEntrepot.h \
@@ -39,6 +43,8 @@ HEADERS += \
 
 # UI files
 FORMS += \
+    form/ViewInventaire.ui \
+    form/ViewStock.ui \
     mainwindow.ui \
     form/FormBonLivraison.ui \
     form/FormEntrepot.ui \

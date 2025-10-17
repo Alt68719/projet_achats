@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ViewInventaire</class>
+ <widget class="QDialog" name="ViewInventaire">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Inventaire Journalier</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <item>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>2025-10-17</date>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QPushButton" name="btnAfficher">
+      <property name="text">
+       <string>Afficher Inventaire</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QTableView" name="tableView"/>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
