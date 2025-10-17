@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormLivraison</class>
+ <widget class="QDialog" name="FormLivraison">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Nouvelle Livraison</string>
+  </property>
+
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <item>
+     <widget class="QLineEdit" name="lineRefFrs">
+      <property name="placeholderText">
+       <string>Réf Fournisseur</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLineEdit" name="lineNumMar">
+      <property name="placeholderText">
+       <string>Numéro Marchandise</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLineEdit" name="lineRefEntr">
+      <property name="placeholderText">
+       <string>Réf Entrepôt</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>2025-10-17</date>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLineEdit" name="linePrix">
+      <property name="placeholderText">
+       <string>Prix d'achat</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QLineEdit" name="lineQte">
+      <property name="placeholderText">
+       <string>Quantité livrée</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <widget class="QPushButton" name="btnAjouter">
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,62 +1,60 @@
-0QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+# Nom du projet
+QT       += core gui widgets sql
 
 CONFIG += c++11
+CONFIG += warn_on
+CONFIG += embed_translations
+LRELEASE = lrelease
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
+# Sources
 SOURCES += \
-    database.cpp \
-    database/database.cpp \
-    entrepot.cpp \
-    entrepotform.cpp \
-    fournisseur.cpp \
-    fournisseurform.cpp \
-    livraison.cpp \
-    livraisonform.cpp \
+    form/FormBonLivraison.cpp \
     main.cpp \
     mainwindow.cpp \
-    marchandise.cpp \
-    marchandiseform.cpp \
+    database/database.cpp \
+    form/FormEntrepot.cpp \
+    form/FormFournisseur.cpp \
+    form/FormLivraison.cpp \
+    form/FormMarchandise.cpp \
     models/entrepot.cpp \
     models/fournisseur.cpp \
     models/livraison.cpp \
     models/marchandise.cpp \
-    models/stock.cpp \
-    stock.cpp \
-    stockmaj.cpp
+    models/stock.cpp
 
+# Headers
 HEADERS += \
-    database/database.h \
-    entrepot.h \
-    fournisseur.h \
-    livraison.h \
+    form/FormBonLivraison.h \
     mainwindow.h \
-    marchandise.h \
-    model/entrepot.h \
-    model/fournisseur.h \
-    model/livraison.h \
-    model/marchandise.h \
-    model/stock.h \
-    stock.h
+    database/database.h \
+    form/FormEntrepot.h \
+    form/FormFournisseur.h \
+    form/FormLivraison.h \
+    form/FormMarchandise.h \
+    models/entrepot.h \
+    models/fournisseur.h \
+    models/livraison.h \
+    models/marchandise.h \
+    models/stock.h
 
+# UI files
 FORMS += \
-    fornisseur.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    form/FormBonLivraison.ui \
+    form/FormEntrepot.ui \
+    form/FormFournisseur.ui \
+    form/FormLivraison.ui \
+    form/FormMarchandise.ui
 
-TRANSLATIONS += \
-    Gestion_achats_fr_FR.ts
-CONFIG += lrelease
-CONFIG += embed_translations
-QT += core gui widgets sql
-# Default rules for deployment.
+# Translations
+TRANSLATIONS += Gestion_achats_fr_FR.ts
+
+# Deployment (Linux / Unix)
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+# Ressources
 DISTFILES += \
     image000/logo00.jpg \
     image000/logo01.png
