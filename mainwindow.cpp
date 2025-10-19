@@ -64,8 +64,8 @@ void MainWindow::on_action_fournisseurs_triggered()
 //fin
 void MainWindow::on_btnNouveauAchat_clicked()
 {
-    //FormFournisseur fFournisseur(this);
-    //if(fFournisseur.exec() == QDialog::Rejected) return;
+    FormFournisseur fFournisseur(this);
+    if(fFournisseur.exec() == QDialog::Rejected) return;
 
     FormMarchandise fMarchandise(this);
     if(fMarchandise.exec() == QDialog::Rejected) return;

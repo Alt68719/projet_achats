@@ -1,5 +1,3 @@
-// database/database.cpp
-
 #include "database/database.h"
 #include <QSqlQuery>
 #include <QSqlError>
@@ -211,55 +209,3 @@ void Database::creerTables()
 
     qDebug() << "Création des tables terminée." << successCount << "commandes SQL exécutées avec succès.";
 }
-//void Database::creerTables()
-//{
-    // 1. Ouvrir le fichier shema.sql
-    //QFile file(":/sql/schema.sql");
-
-    //if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        //qCritical() << "Erreur: Impossible d'ouvrir le fichier de schéma 'shema.sql'. Assurez-vous qu'il est dans le dossier de l'exécutable.";
-        // Optionnel : Afficher un message box visible à l'utilisateur
-        //QMessageBox::critical(nullptr, "Erreur de Fichier",
-                             // "Impossible de trouver ou d'ouvrir 'shema.sql'.");
-        //return;
-    //}
-
-    // 2. Lire tout le contenu du fichier
-    //QTextStream in(&file);
-    //QString sqlScript = in.readAll();
-    //file.close();
-
-    // 3. Nettoyer et Exécuter chaque commande
-    //QSqlQuery query(Database::db);
-
-    // Remplacement du séparateur "---" par ";" pour une meilleure décomposition
-    //sqlScript.replace("---", ";");
-
-    // Activation des clés étrangères (essentiel pour l'intégrité)
-    //if (!query.exec("PRAGMA foreign_keys = ON;")) {
-        //qCritical() << "Erreur lors de l'activation des clés étrangères:" << query.lastError().text();
-    //}
-
-    // Séparer les commandes par le point-virgule (;)
-    //QStringList queries = sqlScript.split(';', Qt::SkipEmptyParts);
-
-    //int successCount = 0;
-
-    //foreach (const QString &statement, queries) {
-        //QString trimmedStatement = statement.trimmed();
-
-        // Exécuter uniquement si l'énoncé n'est pas vide (après nettoyage)
-        //if (!trimmedStatement.isEmpty()) {
-            //if (!query.exec(trimmedStatement)) {
-                // Afficher l'erreur pour aider au débogage
-                //qCritical() << "Erreur SQL (Ligne" << successCount + 1 << "):"
-                            //<< query.lastError().text()
-                            //<< "\nRequête échouée:" << trimmedStatement.left(100) << "...";
-            //} else {
-                //successCount++;
-            //}
-        //}
-    //}
-
-    //qDebug() << "Création des tables terminée." << successCount << "commandes SQL exécutées avec succès.";
-//}
