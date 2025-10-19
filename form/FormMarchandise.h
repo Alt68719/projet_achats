@@ -1,7 +1,7 @@
 #ifndef FORMMARCHANDISE_H
 #define FORMMARCHANDISE_H
 
-#endif // FORMMARCHANDISE_H
+
 
 #pragma once
 #include <QDialog>
@@ -17,9 +17,10 @@ public:
     ~FormMarchandise();
 
 private slots:
-    void on_btnAjouter_clicked();
+    void slotAjouterMarchandise();
 
 private:
     Ui::FormMarchandise *ui;
 };
+#endif // FORMMARCHANDISE_H
 

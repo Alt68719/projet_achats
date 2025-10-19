@@ -20,12 +20,12 @@ FormEntrepot::~FormEntrepot()
 
 void FormEntrepot::on_btnAjouter_clicked()
 {
-    QString ref = ui->lineEditRef->text();        // CORRIGÉ
+    QString ref_entrepot = ui->lineEditRef->text();        // CORRIGÉ
     QString adresse = ui->lineEditAdresse->text(); // CORRIGÉ
 
     QSqlQuery query(Database::db);
-    query.prepare("INSERT INTO entrepot(ref_entr, adresse) VALUES (?, ?)");
-    query.addBindValue(ref);
+    query.prepare("INSERT INTO entrepot(ref_entrepot, adresse) VALUES (?, ?)");
+    query.addBindValue(ref_entrepot);
     query.addBindValue(adresse);
 
     if(!query.exec()){
