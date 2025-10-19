@@ -68,4 +68,7 @@ void FormLivraison::on_btnAjouter_clicked()
         return;
     }
 
-    mettreAJourStock(numMar
+    mettreAJourStock(numMar, refEntr, qte);
+    QMessageBox::information(this, "Succès", "La livraison a été ajoutée et le stock mis à jour.");
+    this->accept();
+}

@@ -1,6 +1,6 @@
 # Nom du projet
 QT       += core gui widgets sql
-
+QT       += sql
 CONFIG += c++11
 CONFIG += warn_on
 CONFIG += embed_translations
@@ -63,4 +63,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 # Ressources
 DISTFILES += \
     image000/logo00.jpg \
-    image000/logo01.png
+    image000/logo01.png \
+    schema.sql
+
+RESOURCES += resources.qrc \
+    resources.qrc

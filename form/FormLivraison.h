@@ -22,6 +22,6 @@ private slots:
 private:
     Ui::FormLivraison *ui;
 
-    void mettreAJourStock(const QString& numMar, const QString& refEntr, int qte);
+    void mettreAJourStock(const QString& ref_Mar, const QString& ref_Entr, int qte);
 };
 

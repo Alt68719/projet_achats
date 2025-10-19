@@ -1,11 +1,10 @@
 #ifndef FORMFOURNISSEUR_H
 #define FORMFOURNISSEUR_H
 
-#endif // FORMFOURNISSEUR_H
 
 #pragma once
 #include <QDialog>
-
+#include <QSqlQuery>
 namespace Ui { class FormFournisseur; }
 
 class FormFournisseur : public QDialog
@@ -23,3 +22,4 @@ private:
     Ui::FormFournisseur *ui;
 };
 
+#endif // FORMFOURNISSEUR_H
