@@ -58,8 +58,8 @@ void MainWindow::on_action_fournisseurs_triggered()
 {
     // 'this' est le parent de la nouvelle fenêtre.
     // Si c'est une QDialog, show() la rend non modale, exec() la rend modale.
-    //FormFournisseur fournisseurDialog(this);
-    //fournisseurDialog.exec(); // Ouvre la fenêtre et bloque l'interaction avec le parent
+    FormFournisseur fournisseurDialog(this);
+    fournisseurDialog.exec(); // Ouvre la fenêtre et bloque l'interaction avec le parent
 }
 //fin
 void MainWindow::on_btnNouveauAchat_clicked()
