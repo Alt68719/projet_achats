@@ -29,6 +29,7 @@ private slots:
     void on_btnInventaire_clicked();
     void on_btnListeLivraison_clicked();
     void on_btnAPropos_clicked();
+    void on_btnVoirEntrepot_clicked();
 
 private:
     Ui::MainWindow *ui;

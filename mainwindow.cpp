@@ -10,6 +10,7 @@
 #include "form/FormBonLivraison.h"
 #include "form/ViewStock.h"
 #include "form/ViewInventaire.h"
+#include "form/Entrepot.h"
 //#include "form/ViewListeLivraison.h"
 //#include "form/ViewAPropos.h"
 
@@ -64,8 +65,6 @@ void MainWindow::on_action_fournisseurs_triggered()
 //fin
 void MainWindow::on_btnNouveauAchat_clicked()
 {
-    FormLivraison fLivraison(this);
-    if(fLivraison.exec() == QDialog::Rejected) return;
 
     FormFournisseur fFournisseur(this);
     if(fFournisseur.exec() == QDialog::Rejected) return;
@@ -76,6 +75,8 @@ void MainWindow::on_btnNouveauAchat_clicked()
     FormEntrepot fEntrepot(this);
     if(fEntrepot.exec() == QDialog::Rejected) return;
 
+    FormLivraison fLivraison(this);
+    if(fLivraison.exec() == QDialog::Rejected) return;
 
     FormBonLivraison fBon(this);
     fBon.exec();  // Affiche le bouton générer le bon
@@ -104,4 +105,10 @@ void MainWindow::on_btnAPropos_clicked()
 {
     FormMarchandise view(this);
     view.exec();
+}
+
+void MainWindow::on_btnVoirEntrepot_clicked()
+{
+    Entrepot fEntrepot(this);  // <-- utiliser la classe Entrepot correspondant à Entrepot.ui
+    fEntrepot.exec();           // Affiche la fenêtre en modal
 }

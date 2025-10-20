@@ -13,27 +13,24 @@
   <property name="windowTitle">
    <string>Voir le Stock</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>258</width>
-     <height>194</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>25</x>
-     <y>20</y>
-     <width>751</width>
-     <height>441</height>
-    </rect>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableView" name="tableView"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelMouvements">
+     <property name="text">
+      <string>Derniers mouvements de stock</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableView" name="tableViewMouvements"/>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
