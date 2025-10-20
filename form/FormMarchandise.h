@@ -1,7 +1,6 @@
 #ifndef FORMMARCHANDISE_H
 #define FORMMARCHANDISE_H
 
-#endif // FORMMARCHANDISE_H
 
 #pragma once
 #include <QDialog>
@@ -22,4 +21,4 @@ private slots:
 private:
     Ui::FormMarchandise *ui;
 };
-
+#endif // FORMMARCHANDISE_H
