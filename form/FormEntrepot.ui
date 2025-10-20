@@ -6,38 +6,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>350</width>
-    <height>150</height>
+    <width>400</width>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Ajouter Entrepôt</string>
+   <string>Assigner Entrepôt à une Marchandise</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayoutMain">
+
+    <!-- Saisie libre de la marchandise -->
     <item>
-     <widget class="QLineEdit" name="lineEditRef">
-      <property name="placeholderText">
-       <string>Réf Entrepôt</string>
+     <widget class="QGroupBox" name="groupBoxMarchandise">
+      <property name="title">
+       <string>Marchandise</string>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayoutMarchandise">
+       <item>
+        <widget class="QLineEdit" name="lineEditMarchandise"/>
+       </item>
+      </layout>
      </widget>
     </item>
+
+    <!-- Sélection de l'entrepôt -->
     <item>
-     <widget class="QLineEdit" name="lineEditAdresse">
-      <property name="placeholderText">
-       <string>Adresse</string>
+     <widget class="QGroupBox" name="groupBoxEntrepot">
+      <property name="title">
+       <string>Entrepôt</string>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayoutEntrepot">
+       <item>
+        <widget class="QComboBox" name="comboBoxEntrepot"/>
+       </item>
+      </layout>
      </widget>
     </item>
+
+    <!-- Bouton Assigner -->
     <item>
      <widget class="QPushButton" name="btnAjouter">
       <property name="text">
-       <string>Ajouter</string>
+       <string>📝 Assigner l'entrepôt</string>
       </property>
      </widget>
     </item>
-   </layout>
-  </widget>
+
+  </layout>
  </widget>
  <resources/>
  <connections/>

@@ -1,12 +1,12 @@
 #ifndef FORMENTREPOT_H
 #define FORMENTREPOT_H
 
-#endif // FORMENTREPOT_H
-
-#pragma once
 #include <QDialog>
+#include <QSqlQueryModel>
 
-namespace Ui { class FormEntrepot; }
+namespace Ui {
+class FormEntrepot;
+}
 
 class FormEntrepot : public QDialog
 {
@@ -21,5 +21,9 @@ private slots:
 
 private:
     Ui::FormEntrepot *ui;
+    QSqlQueryModel *modelEntrepot;
+
+    void remplirComboBoxes();
 };
 
+#endif // FORMENTREPOT_H

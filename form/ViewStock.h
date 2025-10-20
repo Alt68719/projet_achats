@@ -19,8 +19,10 @@ public:
 private:
     Ui::ViewStock *ui;
     QSqlQueryModel *model;
+    QSqlQueryModel *modelMouvements;
 
     void chargerStock();
+    void chargerMouvements();
 };
 
 #endif // VIEWSTOCK_H

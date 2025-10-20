@@ -91,14 +91,15 @@ void FormLivraison::on_btnAjouter_clicked()
     // 2. Insertion de la livraison dans la table 'livrer'
     QSqlQuery query(Database::db);
     // Assurez-vous que l'ordre des colonnes correspond à l'ordre des addBindValue
-    query.prepare("INSERT INTO livrer(num_livraison,ref_frs, num_mar, ref_entr, date_de_livraison, prix_achat, qte_livre) VALUES (?, ?, ?, ?, ?, ?,?)");
+    query.prepare("INSERT INTO livrer(num_livraison, ref_frs, date_de_livraison, prix_achat, qte_livre, ref_mar, ref_entrepot) "
+                  "VALUES (?, ?, ?, ?, ?, ?, ?)");
     query.addBindValue(num_livraison);
     query.addBindValue(ref_frs);
-    query.addBindValue(ref_mar);
-    query.addBindValue(ref_entrepot);
     query.addBindValue(date_de_livraison);
     query.addBindValue(prix_achat);
     query.addBindValue(qte_livre);
+    query.addBindValue(ref_mar);
+    query.addBindValue(ref_entrepot);
 
     if (!query.exec()){
         QMessageBox::warning(this,"Erreur d'Insertion Livraison","Impossible d'ajouter la livraison:\n"+query.lastError().text());

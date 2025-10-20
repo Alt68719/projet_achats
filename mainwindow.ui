@@ -50,6 +50,14 @@
       </property>
      </widget>
     </item>
+    <!-- Nouveau bouton ajouté -->
+    <item>
+     <widget class="QPushButton" name="btnVoirEntrepot">
+      <property name="text">
+       <string>🏢 Voir Entrepôt</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
