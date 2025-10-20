@@ -14,19 +14,32 @@
    <string>Inventaire Journalier</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>258</width>
+     <height>263</height>
+    </rect>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
-
     <item>
      <widget class="QDateEdit" name="dateEdit">
+      <property name="displayFormat">
+       <string>yyyy/MM/dd</string>
+      </property>
       <property name="calendarPopup">
        <bool>true</bool>
       </property>
       <property name="date">
-       <date>2025-10-17</date>
+       <date>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QPushButton" name="btnAfficher">
       <property name="text">
@@ -34,11 +47,9 @@
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QTableView" name="tableView"/>
     </item>
-
    </layout>
   </widget>
  </widget>

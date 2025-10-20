@@ -6,33 +6,56 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>350</height>
+    <width>381</width>
+    <height>424</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Nouvelle Livraison</string>
   </property>
-
   <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>322</width>
+     <height>391</height>
+    </rect>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
-
     <item>
-     <widget class="QLineEdit" name="lineRefFrs">
+     <widget class="QLineEdit" name="lineNumLivraison">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Num Livraison</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineRefMar">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Réf Marchandise</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineRefFournisseur">
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
       <property name="placeholderText">
        <string>Réf Fournisseur</string>
       </property>
      </widget>
     </item>
-
-    <item>
-     <widget class="QLineEdit" name="lineNumMar">
-      <property name="placeholderText">
-       <string>Numéro Marchandise</string>
-      </property>
-     </widget>
-    </item>
-
     <item>
      <widget class="QLineEdit" name="lineRefEntr">
       <property name="placeholderText">
@@ -40,18 +63,23 @@
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QDateEdit" name="dateEdit">
+      <property name="displayFormat">
+       <string>yyyy/MM/dd</string>
+      </property>
       <property name="calendarPopup">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="date">
-       <date>2025-10-17</date>
+       <date>
+        <year>2000</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QLineEdit" name="linePrix">
       <property name="placeholderText">
@@ -59,7 +87,6 @@
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QLineEdit" name="lineQte">
       <property name="placeholderText">
@@ -67,7 +94,6 @@
       </property>
      </widget>
     </item>
-
     <item>
      <widget class="QPushButton" name="btnAjouter">
       <property name="text">
@@ -75,8 +101,15 @@
       </property>
      </widget>
     </item>
-
    </layout>
+   <zorder>lineRefMar</zorder>
+   <zorder>lineNumLivraison</zorder>
+   <zorder>lineRefEntr</zorder>
+   <zorder>dateEdit</zorder>
+   <zorder>linePrix</zorder>
+   <zorder>lineQte</zorder>
+   <zorder>btnAjouter</zorder>
+   <zorder>lineRefFournisseur</zorder>
   </widget>
  </widget>
  <resources/>

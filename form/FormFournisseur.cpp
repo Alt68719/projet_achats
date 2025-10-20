@@ -26,9 +26,6 @@ void FormFournisseur::on_btnAjouter_clicked()
 {
     QString ref_frs = ui->lineEditRef->text();
     QString raison_sociale = ui->lineEditRaison->text();
-
-    // 🚨 Correction : Convertir NIF et Tel_frs en int
-    // La méthode .toInt() tente la conversion. Si l'utilisateur entre du texte, elle renvoie 0.
     int NIF = ui->lineEditNIF->text().toInt();
     int tel_frs = ui->lineEditTel->text().toInt();
 

@@ -29,7 +29,7 @@ void ViewStock::chargerStock()
 {
     // 1. Récupérer tous les entrepôts
     QSqlQuery query(Database::db);
-    if(!query.exec("SELECT ref_entr FROM entrepot")) {
+    if(!query.exec("SELECT ref_entrepot FROM entrepot")) {
         QMessageBox::warning(this, "Erreur", "Impossible de récupérer les entrepôts:\n" + query.lastError().text());
         return;
     }
@@ -47,7 +47,7 @@ void ViewStock::chargerStock()
     QStringList colonnes;
     colonnes << "m.ref_mar AS 'Réf Marchandise'" << "m.design AS 'Désignation'";
     for(const QString &e : entrepots){
-        colonnes << QString("(SELECT s.qte_stock FROM stocker s WHERE s.num_mar = m.ref_mar AND s.ref_entr = '%1') AS '%1'").arg(e);
+        colonnes << QString("(SELECT s.qte_stock FROM stocker s WHERE s.ref_mar = m.ref_mar AND s.ref_entrepot = '%1') AS '%1'").arg(e);
     }
 
     QString queryStr = QString("SELECT %1 FROM marchandise m").arg(colonnes.join(", "));
