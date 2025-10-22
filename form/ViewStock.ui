@@ -14,9 +14,13 @@
    <string>Voir le Stock</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+
+   <!-- Tableau du stock -->
    <item>
     <widget class="QTableView" name="tableView"/>
    </item>
+
+   <!-- Label pour mouvements -->
    <item>
     <widget class="QLabel" name="labelMouvements">
      <property name="text">
@@ -27,9 +31,21 @@
      </property>
     </widget>
    </item>
+
+   <!-- Tableau des mouvements -->
    <item>
     <widget class="QTableView" name="tableViewMouvements"/>
    </item>
+
+   <!-- Bouton supprimer -->
+   <item>
+    <widget class="QPushButton" name="btnSupprimer">
+     <property name="text">
+      <string>Supprimer le stock sélectionné</string>
+     </property>
+    </widget>
+   </item>
+
   </layout>
  </widget>
  <resources/>

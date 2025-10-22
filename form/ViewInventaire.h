@@ -22,6 +22,7 @@ private slots:
 private:
     Ui::ViewInventaire *ui;
     QSqlQueryModel *model;
+    void rafraichirVue();
 };
 
 #endif // VIEWINVENTAIRE_H

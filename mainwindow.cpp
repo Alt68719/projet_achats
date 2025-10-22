@@ -78,8 +78,7 @@ void MainWindow::on_btnNouveauAchat_clicked()
     FormLivraison fLivraison(this);
     if(fLivraison.exec() == QDialog::Rejected) return;
 
-    FormBonLivraison fBon(this);
-    fBon.exec();  // Affiche le bouton générer le bon
+
 }
 
 // -------- Autres boutons --------

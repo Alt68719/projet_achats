@@ -35,26 +35,16 @@ CREATE TABLE IF NOT EXISTS marchandise (
 );
 
 CREATE TABLE IF NOT EXISTS livrer (
-  num_livraison VARCHAR(20) NOT NULL,
+  num_livraison VARCHAR(20) NOT NULL PRIMARY KEY,
   ref_frs VARCHAR(20) NOT NULL,
-  date_de_livraison DATE NOT NULL,
-  prix_achat REAL NOT NULL,
-  qte_livre INTEGER NOT NULL,
   ref_mar VARCHAR(20) NOT NULL,
   ref_entrepot VARCHAR(20) NOT NULL,
-  PRIMARY KEY (num_livraison),
-  FOREIGN KEY (ref_entrepot)
-    REFERENCES entrepot (ref_entrepot)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (ref_frs)
-    REFERENCES fournisseur (ref_frs)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (ref_mar)
-    REFERENCES marchandise (ref_mar)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
+  qte_livre INTEGER NOT NULL,
+  prix_achat REAL NOT NULL,
+  date_de_livraison DATE NOT NULL,
+  FOREIGN KEY (ref_entrepot) REFERENCES entrepot(ref_entrepot) ON DELETE CASCADE,
+  FOREIGN KEY (ref_frs) REFERENCES fournisseur(ref_frs) ON DELETE CASCADE,
+  FOREIGN KEY (ref_mar) REFERENCES marchandise(ref_mar) ON DELETE CASCADE
 );
 
 CREATE INDEX IF NOT EXISTS idx_livrer_ref_frs ON livrer (ref_frs);
@@ -62,19 +52,12 @@ CREATE INDEX IF NOT EXISTS idx_livrer_ref_mar ON livrer (ref_mar);
 CREATE INDEX IF NOT EXISTS idx_livrer_ref_entrepot ON livrer (ref_entrepot);
 
 CREATE TABLE IF NOT EXISTS stocker (
-  num_operat VARCHAR(20) NOT NULL,
   ref_mar VARCHAR(20) NOT NULL,
   ref_entrepot VARCHAR(20) NOT NULL,
   qte_stock INTEGER DEFAULT 0,
   PRIMARY KEY (ref_mar, ref_entrepot),
-  FOREIGN KEY (ref_entrepot)
-    REFERENCES entrepot (ref_entrepot)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  FOREIGN KEY (ref_mar)
-    REFERENCES marchandise (ref_mar)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
+  FOREIGN KEY (ref_entrepot) REFERENCES entrepot(ref_entrepot) ON DELETE CASCADE,
+  FOREIGN KEY (ref_mar) REFERENCES marchandise(ref_mar) ON DELETE CASCADE
 );
 
 CREATE INDEX IF NOT EXISTS idx_stocker_ref_mar ON stocker (ref_mar);
@@ -127,21 +110,14 @@ CREATE TRIGGER IF NOT EXISTS maj_stock
 AFTER INSERT ON livrer
 FOR EACH ROW
 BEGIN
-    -- Mise à jour du stock si la ligne existe
     UPDATE stocker
     SET qte_stock = qte_stock + NEW.qte_livre
     WHERE ref_mar = NEW.ref_mar AND ref_entrepot = NEW.ref_entrepot;
 
-    -- Insertion si la ligne n'existe pas encore
-    INSERT INTO stocker (num_operat, ref_mar, ref_entrepot, qte_stock)
-    SELECT
-        'OP' || NEW.num_livraison,
-        NEW.ref_mar,
-        NEW.ref_entrepot,
-        NEW.qte_livre
+    INSERT INTO stocker(ref_mar, ref_entrepot, qte_stock)
+    SELECT NEW.ref_mar, NEW.ref_entrepot, NEW.qte_livre
     WHERE NOT EXISTS (
-        SELECT 1 FROM stocker
-        WHERE ref_mar = NEW.ref_mar AND ref_entrepot = NEW.ref_entrepot
+        SELECT 1 FROM stocker WHERE ref_mar = NEW.ref_mar AND ref_entrepot = NEW.ref_entrepot
     );
 END;
 )";
