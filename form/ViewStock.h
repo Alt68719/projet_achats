@@ -2,7 +2,8 @@
 #define VIEWSTOCK_H
 
 #include <QDialog>
-#include <QSqlQueryModel>
+
+class QSqlQueryModel;
 
 namespace Ui {
 class ViewStock;
@@ -16,13 +17,17 @@ public:
     explicit ViewStock(QWidget *parent = nullptr);
     ~ViewStock();
 
+private slots:
+    void supprimerStockSelectionne();
+
+private:
+    void chargerStock();
+    void chargerMouvements();
+
 private:
     Ui::ViewStock *ui;
     QSqlQueryModel *model;
     QSqlQueryModel *modelMouvements;
-
-    void chargerStock();
-    void chargerMouvements();
 };
 
 #endif // VIEWSTOCK_H

@@ -6,42 +6,47 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>851</width>
-    <height>490</height>
+    <width>850</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Générer Bon de Livraison</string>
+   <string>Liste des Bons de Livraison</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>189</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="btnGenerer">
-      <property name="text">
-       <string>Générer le bon de livraison</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>40</y>
-     <width>831</width>
-     <height>441</height>
-    </rect>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayoutMain">
+
+   <item>
+    <widget class="QLabel" name="labelTitre">
+     <property name="text">
+      <string>📦 Liste des bons de livraison</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 16pt; font-weight: bold; color: #2c3e50;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QTableView" name="tableView">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
  </widget>
  <resources/>
  <connections/>

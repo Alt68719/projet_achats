@@ -2,6 +2,7 @@
 #define FORMBONLIVRAISON_H
 
 #include <QDialog>
+#include <QSqlQueryModel>
 
 namespace Ui {
 class FormBonLivraison;
@@ -15,11 +16,11 @@ public:
     explicit FormBonLivraison(QWidget *parent = nullptr);
     ~FormBonLivraison();
 
-private slots:
-    void on_btnGenerer_clicked(); // Slot pour le bouton "Générer le bon de livraison"
-
 private:
     Ui::FormBonLivraison *ui;
+    QSqlQueryModel *modelBonLivraison;
+
+    void chargerBonLivraison(); // nouvelle fonction
 };
 
 #endif // FORMBONLIVRAISON_H
