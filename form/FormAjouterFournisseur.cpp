@@ -1,13 +1,19 @@
 #include "FormAjouterFournisseur.h"
-#include "ui_FormAjouterFournisseur.h" // Le fichier généré par le nouveau UI
+#include "ui_FormAjouterFournisseur.h"
+
 #include <QMessageBox>
 #include <QSqlRecord>
 #include <QSqlError>
 
+// Inclusion des formulaires suivants
+#include "form/FormMarchandise.h"
+#include "form/FormEntrepot.h"
+#include "form/FormLivraison.h"
+
 FormAjouterFournisseur::FormAjouterFournisseur(QSqlTableModel *modelFrs, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::FormAjouterFournisseur),
-    modelFournisseur(modelFrs) // Stocke le pointeur du modèle principal
+    modelFournisseur(modelFrs)
 {
     ui->setupUi(this);
 }
@@ -17,19 +23,19 @@ FormAjouterFournisseur::~FormAjouterFournisseur()
     delete ui;
 }
 
-// Opération CREATE: Ajouter un nouveau fournisseur
 void FormAjouterFournisseur::on_btnAjouter_clicked()
 {
     QString ref = ui->lineEditRefFrs->text().trimmed();
     QString raisonSociale = ui->lineEditRaisonSociale->text().trimmed();
-    // Assurez-vous que NIF et Téléphone sont des entiers avant de les convertir
+
     bool nifOk, telOk;
     int NIF = ui->lineEditNIF->text().trimmed().toInt(&nifOk);
     int tel = ui->lineEditTelFrs->text().trimmed().toInt(&telOk);
     QString adresse = ui->lineEditAdresse->text().trimmed();
 
     if (ref.isEmpty() || raisonSociale.isEmpty() || adresse.isEmpty() || !nifOk || !telOk) {
-        QMessageBox::warning(this, "Erreur de Saisie", "Veuillez remplir tous les champs correctement (NIF et Tél doivent être des nombres).");
+        QMessageBox::warning(this, "Erreur de saisie",
+                             "Veuillez remplir tous les champs correctement (NIF et Tél doivent être des nombres).");
         return;
     }
 
@@ -41,24 +47,41 @@ void FormAjouterFournisseur::on_btnAjouter_clicked()
     newRecord.setValue("tel_frs", tel);
 
     if (!modelFournisseur->insertRecord(-1, newRecord)) {
-        QMessageBox::critical(this, "Erreur SQL (Insertion)", "Impossible d'ajouter le fournisseur : " + modelFournisseur->lastError().text());
+        QMessageBox::critical(this, "Erreur SQL (Insertion)",
+                              "Impossible d'ajouter le fournisseur : " + modelFournisseur->lastError().text());
         modelFournisseur->revertAll();
         return;
     }
 
     if (!modelFournisseur->submitAll()) {
-        QMessageBox::critical(this, "Erreur SQL (Sauvegarde)", "Échec de la sauvegarde en base : " + modelFournisseur->lastError().text());
+        QMessageBox::critical(this, "Erreur SQL (Sauvegarde)",
+                              "Échec de la sauvegarde en base : " + modelFournisseur->lastError().text());
         modelFournisseur->revertAll();
         return;
     }
 
-    modelFournisseur->select(); // Rafraîchir le tableau du formulaire principal
+    modelFournisseur->select();
     QMessageBox::information(this, "Succès", "Fournisseur ajouté avec succès !");
 
-    // Vider les champs après ajout
-    ui->lineEditRefFrs->clear();
-    ui->lineEditRaisonSociale->clear();
-    ui->lineEditNIF->clear();
-    ui->lineEditAdresse->clear();
-    ui->lineEditTelFrs->clear();
+    // ✅ Ferme ce formulaire
+    this->accept();
+
+    // 🔁 Enchaînement automatique des formulaires
+    QWidget *parentWidget = this->parentWidget();
+
+    // --- Étape 1 : Marchandise ---
+    FormMarchandise formMarchandise(parentWidget);
+    if (formMarchandise.exec() == QDialog::Rejected)
+        return;
+
+    // --- Étape 2 : Entrepôt ---
+    FormEntrepot formEntrepot(parentWidget);
+    if (formEntrepot.exec() == QDialog::Rejected)
+        return;
+
+    // --- Étape 3 : Livraison ---
+    FormLivraison formLivraison(parentWidget);
+    formLivraison.exec();
+
+    // ✅ Retour automatique à MainWindow (fin du flux)
 }
