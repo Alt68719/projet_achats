@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormListeFournisseur</class>
+ <widget class="QDialog" name="FormListeFournisseur">
+  <property name="windowTitle">
+   <string>Liste et Gestion des Fournisseurs</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayoutMain">
+   <item>
+    <widget class="QLabel" name="labelTitre">
+     <property name="text">
+      <string>Gestion des Fournisseurs (Liste)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18pt; font-weight: bold;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutTop">
+     <item>
+      <widget class="QPushButton" name="btnOuvrirAjout">
+       <property name="text">
+        <string>➕ Ouvrir Formulaire d'Ajout</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacerTop">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0"><size>40,20</size></property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QGroupBox" name="groupBoxListe">
+     <property name="title">
+      <string>Liste et Modification des Fournisseurs (READ / UPDATE / DELETE)</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayoutListe">
+      <item>
+       <widget class="QTableView" name="tableViewFournisseurs"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutBoutons">
+        <item>
+         <widget class="QPushButton" name="btnEnregistrerModifications">
+          <property name="text"><string>💾 Enregistrer les Modifications</string></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size>40,20</size></property></spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSupprimer">
+          <property name="text"><string>❌ Supprimer la sélection (DELETE)</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

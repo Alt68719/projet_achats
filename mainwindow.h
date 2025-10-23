@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "form/FormFournisseur.h"
+#include "form/FormListeFournisseur.h"
+#include "form/FormAjouterFournisseur.h"
 #include "form/FormLivraison.h"
 #include "form/FormBonLivraison.h"
 #include "form/FormEntrepot.h"
@@ -24,15 +25,17 @@ public:
 
 private slots:
     void on_action_fournisseurs_triggered();
+    void on_btnGestionFournisseurs_clicked();
     void on_btnNouveauAchat_clicked();
     void on_btnVoirStock_clicked();
     void on_btnInventaire_clicked();
     void on_btnListeLivraison_clicked();
     void on_btnAPropos_clicked();
     void on_btnVoirEntrepot_clicked();
-
+    void on_btnVoirFourniseur_clicked();
 private:
     Ui::MainWindow *ui;
+    void configurerModele();
 };
 
 #endif // MAINWINDOW_H

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormAjouterFournisseur</class>
+ <widget class="QDialog" name="FormAjouterFournisseur">
+  <property name="windowTitle">
+   <string>Ajouter un Fournisseur (CREATE)</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayoutMain">
+   <item>
+    <widget class="QLabel" name="labelTitre">
+     <property name="text">
+      <string>Nouveau Fournisseur</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 18pt; font-weight: bold;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayoutAjout">
+     <item row="0" column="0"><widget class="QLabel" name="labelRefFrs"><property name="text"><string>Référence Fournisseur:</string></property></widget></item>
+     <item row="0" column="1"><widget class="QLineEdit" name="lineEditRefFrs"/></item>
+     <item row="0" column="2"><widget class="QLabel" name="labelNIF"><property name="text"><string>NIF:</string></property></widget></item>
+     <item row="0" column="3"><widget class="QLineEdit" name="lineEditNIF"/></item>
+     <item row="1" column="0"><widget class="QLabel" name="labelRaisonSociale"><property name="text"><string>Raison Sociale:</string></property></widget></item>
+     <item row="1" column="1"><widget class="QLineEdit" name="lineEditRaisonSociale"/></item>
+     <item row="1" column="2"><widget class="QLabel" name="labelTelFrs"><property name="text"><string>Téléphone:</string></property></widget></item>
+     <item row="1" column="3"><widget class="QLineEdit" name="lineEditTelFrs"/></item>
+     <item row="2" column="0"><widget class="QLabel" name="labelAdresse"><property name="text"><string>Adresse:</string></property></widget></item>
+     <item row="2" column="1" colspan="2"><widget class="QLineEdit" name="lineEditAdresse"/></item>
+     <item row="2" column="3" alignment="Qt::AlignRight">
+      <widget class="QPushButton" name="btnAjouter">
+       <property name="text"><string>➕ Ajouter Fournisseur</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item><spacer name="verticalSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size>40,20</size></property></spacer></item>
+  </layout>
+ </widget>
+</ui>

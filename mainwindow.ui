@@ -6,17 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>598</width>
-    <height>429</height>
+    <width>626</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Gestion des Achats</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="btnNouveauAchat">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>🆕 Nouveau Achat</string>
       </property>
@@ -24,6 +30,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="btnVoirStock">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>📦 Voir le stock</string>
       </property>
@@ -31,6 +40,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="btnInventaire">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>📋 Inventaire</string>
       </property>
@@ -38,6 +50,9 @@
     </item>
     <item>
      <widget class="QPushButton" name="btnListeLivraison">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>💰 Liste des livraisons</string>
       </property>
@@ -45,16 +60,31 @@
     </item>
     <item>
      <widget class="QPushButton" name="btnAPropos">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>ℹ️ À propos des achats</string>
       </property>
      </widget>
     </item>
-    <!-- Nouveau bouton ajouté -->
     <item>
      <widget class="QPushButton" name="btnVoirEntrepot">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string>🏢 Voir Entrepôt</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnVoirFourniseur">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>🏭 Fournisseur</string>
       </property>
      </widget>
     </item>

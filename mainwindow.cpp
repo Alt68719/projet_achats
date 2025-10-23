@@ -2,8 +2,10 @@
 #include "ui_mainwindow.h"
 #include "QSqlTableModel"
 
-// Formulaires spécifiques
-#include "form/FormFournisseur.h"
+#include "database/database.h"
+
+#include "form/FormAjouterFournisseur.h"
+#include "form/FormListeFournisseur.h"
 #include "form/FormMarchandise.h"
 #include "form/FormEntrepot.h"
 #include "form/FormLivraison.h"
@@ -16,45 +18,31 @@
 
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+
+
+// ... (Autres includes pour Entrepot, Marchandise, etc.)
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // Assurez-vous d'ouvrir la connexion à la base de données ici, par exemple :
+    // Database::ouvrir();
 
-    // 1. Créer le modèle
-    QSqlTableModel *model = new QSqlTableModel(this);
-    model->setTable("FOURNISSEUR"); // Nom de votre table
-
-    // 2. Définir les noms des colonnes pour l'affichage
-    model->setHeaderData(0, Qt::Horizontal, tr("Référence Frs"));
-    model->setHeaderData(1, Qt::Horizontal, tr("Raison Sociale"));
-    model->setHeaderData(2, Qt::Horizontal, tr("NIF"));
-    model->setHeaderData(3, Qt::Horizontal, tr("Adresse"));
-    model->setHeaderData(4, Qt::Horizontal, tr("Téléphone"));
-
-    // 3. Charger les données
-    if (!model->select()) {
-        QMessageBox::critical(this, "Erreur SQL", "Impossible de charger la table FOURNISSEUR.");
-        return;
-    }
-
-    // 4. Lier le modèle à la QTableView (assurez-vous d'avoir une QTableView nommée 'tableView' dans votre .ui)
-    //ui->tableView->setModel(model);
-    //ui->tableView->setEditTriggers(QAbstractItemView::DoubleTap | QAbstractItemView::EditKeyPressed);
-    // Permet l'édition directe dans la vue, simplifiant l'UPDATE
-
-    // Connexion des boutons si non déjà fait dans Qt Designer
-    connect(ui->btnNouveauAchat, &QPushButton::clicked, this, &MainWindow::on_btnNouveauAchat_clicked);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    // Database::fermer();
 }
 
-// -------- Bouton Nouveau Achat --------
-//dep
+void MainWindow::on_btnGestionFournisseurs_clicked()
+{
+    FormListeFournisseur *form = new FormListeFournisseur(this);
+    form->exec();
+}
 void MainWindow::on_action_fournisseurs_triggered()
 {
     // 'this' est le parent de la nouvelle fenêtre.
@@ -62,12 +50,22 @@ void MainWindow::on_action_fournisseurs_triggered()
     //FormFournisseur fournisseurDialog(this);
     //fournisseurDialog.exec(); // Ouvre la fenêtre et bloque l'interaction avec le parent
 }
-//fin
-void MainWindow::on_btnNouveauAchat_clicked()
-{
 
-    FormFournisseur fFournisseur(this);
-    if(fFournisseur.exec() == QDialog::Rejected) return;
+// Vous feriez de même pour Marchandise, Stock, etc.
+    void MainWindow::on_btnNouveauAchat_clicked()
+{
+    // 1. Initialiser le modèle de données (QSqlTableModel)
+    QSqlTableModel modelFournisseur(nullptr, Database::db);
+    modelFournisseur.setTable("fournisseur");
+    modelFournisseur.select();
+
+
+    FormAjouterFournisseur fAjouterFournisseur(&modelFournisseur , this);
+
+
+    if(fAjouterFournisseur.exec() == QDialog::Rejected) {
+        return; // Sortir si l'utilisateur a annulé.
+    }
 
     FormMarchandise fMarchandise(this);
     if(fMarchandise.exec() == QDialog::Rejected) return;
@@ -77,8 +75,6 @@ void MainWindow::on_btnNouveauAchat_clicked()
 
     FormLivraison fLivraison(this);
     if(fLivraison.exec() == QDialog::Rejected) return;
-
-
 }
 
 // -------- Autres boutons --------
@@ -108,6 +104,11 @@ void MainWindow::on_btnAPropos_clicked()
 
 void MainWindow::on_btnVoirEntrepot_clicked()
 {
-    Entrepot fEntrepot(this);  // <-- utiliser la classe Entrepot correspondant à Entrepot.ui
-    fEntrepot.exec();           // Affiche la fenêtre en modal
+    Entrepot fEntrepot(this);
+    fEntrepot.exec();
+}
+void MainWindow::on_btnVoirFourniseur_clicked()
+{
+    FormListeFournisseur fFourniseur(this);
+    fFourniseur.exec();
 }
