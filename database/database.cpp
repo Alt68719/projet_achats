@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS stocker (
 CREATE INDEX IF NOT EXISTS idx_stocker_ref_mar ON stocker (ref_mar);
 CREATE INDEX IF NOT EXISTS idx_stocker_ref_entrepot ON stocker (ref_entrepot);
 
--- VIEW : bon_livraison
 CREATE VIEW IF NOT EXISTS bon_livraison AS
 SELECT
   l.num_livraison AS Num_Livraison,
@@ -79,7 +78,6 @@ FROM livrer AS l
 LEFT JOIN fournisseur AS f ON l.ref_frs = f.ref_frs
 LEFT JOIN marchandise AS m ON l.ref_mar = m.ref_mar;
 
--- VIEW : inventaire (correction : jointure sur ref_mar + ref_entrepot)
 CREATE VIEW IF NOT EXISTS inventaire AS
 SELECT
   s.ref_mar AS Ref_Mar,
@@ -91,10 +89,8 @@ SELECT
 FROM stocker AS s
 JOIN marchandise AS m ON s.ref_mar = m.ref_mar
 JOIN entrepot AS e ON s.ref_entrepot = e.ref_entrepot
--- Correction ici : jointure sur ref_mar + ref_entrepot (plus fiable que num_operat)
 JOIN livrer AS l ON s.ref_mar = l.ref_mar AND s.ref_entrepot = l.ref_entrepot;
 
--- VIEW : prix_max
 CREATE VIEW IF NOT EXISTS prix_max AS
 SELECT
   m.ref_mar AS Ref_Mar,
@@ -105,7 +101,6 @@ JOIN marchandise AS m ON l.ref_mar = m.ref_mar
 WHERE l.date_de_livraison = '2025-05-04'
 GROUP BY m.ref_mar, m.design;
 
--- TRIGGER : maj_stock (utilise la nouvelle clé primaire)
 CREATE TRIGGER IF NOT EXISTS maj_stock
 AFTER INSERT ON livrer
 FOR EACH ROW
@@ -141,11 +136,6 @@ bool Database::ouvrir()
     qDebug() << "Connexion SQLite établie avec succès.";
     return true;
 }
-// database/database.cpp
-
-// DANS database/database.cpp
-
-// DANS database/database.cpp
 
 void Database::creerTables()
 {

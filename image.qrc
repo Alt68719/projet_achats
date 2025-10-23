@@ -1,6 +1,5 @@
 <RCC>
-    <qresource prefix="/sql">
-        <file>schema.sql</file>
+    <qresource prefix="/image01">
         <file>image000/Nouveau dossier/stock-photo-big-retail-warehouse-full-of-shelves-with-goods-stored-on-manual-pallet-truck-in-cardboard-boxes-1845794623.jpg</file>
         <file>image000/Nouveau dossier/stock-photo-outside-of-logistics-warehouse-with-open-door-delivery-van-loaded-with-cardboard-boxes-truck-2042952230.jpg</file>
         <file>image000/Nouveau dossier/stock-photo-pr-acronym-purchase-requisition-or-purchase-request-is-a-formal-document-used-within-an-2410451419.jpg</file>
