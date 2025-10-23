@@ -52,30 +52,16 @@ void MainWindow::on_action_fournisseurs_triggered()
 }
 
 // Vous feriez de même pour Marchandise, Stock, etc.
-    void MainWindow::on_btnNouveauAchat_clicked()
+void MainWindow::on_btnNouveauAchat_clicked()
 {
-    // 1. Initialiser le modèle de données (QSqlTableModel)
     QSqlTableModel modelFournisseur(nullptr, Database::db);
     modelFournisseur.setTable("fournisseur");
     modelFournisseur.select();
 
-
-    FormAjouterFournisseur fAjouterFournisseur(&modelFournisseur , this);
-
-
-    if(fAjouterFournisseur.exec() == QDialog::Rejected) {
-        return; // Sortir si l'utilisateur a annulé.
-    }
-
-    FormMarchandise fMarchandise(this);
-    if(fMarchandise.exec() == QDialog::Rejected) return;
-
-    FormEntrepot fEntrepot(this);
-    if(fEntrepot.exec() == QDialog::Rejected) return;
-
-    FormLivraison fLivraison(this);
-    if(fLivraison.exec() == QDialog::Rejected) return;
+    FormAjouterFournisseur fAjouterFournisseur(&modelFournisseur, this);
+    fAjouterFournisseur.exec();
 }
+
 
 // -------- Autres boutons --------
 void MainWindow::on_btnVoirStock_clicked()
