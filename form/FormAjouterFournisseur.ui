@@ -2,43 +2,253 @@
 <ui version="4.0">
  <class>FormAjouterFournisseur</class>
  <widget class="QDialog" name="FormAjouterFournisseur">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>831</width>
+    <height>571</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Ajouter un Fournisseur (CREATE)</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayoutMain">
-   <item>
-    <widget class="QLabel" name="labelTitre">
-     <property name="text">
-      <string>Nouveau Fournisseur</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 18pt; font-weight: bold;</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QGridLayout" name="gridLayoutAjout">
-     <item row="0" column="0"><widget class="QLabel" name="labelRefFrs"><property name="text"><string>Référence Fournisseur:</string></property></widget></item>
-     <item row="0" column="1"><widget class="QLineEdit" name="lineEditRefFrs"/></item>
-     <item row="0" column="2"><widget class="QLabel" name="labelNIF"><property name="text"><string>NIF:</string></property></widget></item>
-     <item row="0" column="3"><widget class="QLineEdit" name="lineEditNIF"/></item>
-     <item row="1" column="0"><widget class="QLabel" name="labelRaisonSociale"><property name="text"><string>Raison Sociale:</string></property></widget></item>
-     <item row="1" column="1"><widget class="QLineEdit" name="lineEditRaisonSociale"/></item>
-     <item row="1" column="2"><widget class="QLabel" name="labelTelFrs"><property name="text"><string>Téléphone:</string></property></widget></item>
-     <item row="1" column="3"><widget class="QLineEdit" name="lineEditTelFrs"/></item>
-     <item row="2" column="0"><widget class="QLabel" name="labelAdresse"><property name="text"><string>Adresse:</string></property></widget></item>
-     <item row="2" column="1" colspan="2"><widget class="QLineEdit" name="lineEditAdresse"/></item>
-     <item row="2" column="3" alignment="Qt::AlignRight">
-      <widget class="QPushButton" name="btnAjouter">
-       <property name="text"><string>➕ Ajouter Fournisseur</string></property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item><spacer name="verticalSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size>40,20</size></property></spacer></item>
-  </layout>
+  <property name="styleSheet">
+   <string notr="true">QWidget#FormAjouterFournisseur {
+    border-image: url(&quot;C:/projet_QT/projet_achats/image000/fond02.jpg&quot;) 0 0 0 0 stretch stretch;
+}
+
+
+</string>
+  </property>
+  <widget class="QLabel" name="labelTitre">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>811</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 18pt; font-weight: bold;</string>
+   </property>
+   <property name="text">
+    <string>Nouveau Fournisseur</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelRefFrs">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>190</y>
+     <width>161</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Réf Fournisseur:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditRefFrs">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>190</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelNIF">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>129</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>NIF:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditNIF">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>130</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelRaisonSociale">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>250</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Raison Sociale:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditRaisonSociale">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>250</y>
+     <width>200</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTelFrs">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>310</y>
+     <width>161</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Téléphone:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditTelFrs">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>310</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelAdresse">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>370</y>
+     <width>150</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Adresse:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditAdresse">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>370</y>
+     <width>430</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnAjouter">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>470</y>
+     <width>200</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background-color: #29bf12;
+border-radius: 15px;
+border: none;
+padding: 10px 20px;
+color: white;
+font-size: 15px;
+font-weight: bold;
+}</string>
+   </property>
+   <property name="text">
+    <string>📥 Enregistrer</string>
+   </property>
+  </widget>
+  <widget class="QTextBrowser" name="textBrowser">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>821</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTextBrowser {
+    border-image: url(&quot;C:/projet_QT/projet_achats/image000/fond03.jpg&quot;) 0 0 0 0 stretch stretch;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+}</string>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Ajout d'un nouveau fournisseur&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
  </widget>
+ <resources/>
+ <connections/>
 </ui>
